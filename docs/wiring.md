@@ -1,5 +1,8 @@
 # Wiring / 接线
 
+完整的分阶段组装、上电检查和手机配网步骤见
+[`assembly.md`](assembly.md)。原理图见 [`schematic.svg`](schematic.svg)。
+
 | ESP32-C3 | SHT30 | ENS160 | SSD1306 | WS2812 |
 | --- | --- | --- | --- | --- |
 | 3V3 | VIN/VCC | VIN/VCC | VCC | VCC when module supports 3.3 V |
@@ -17,4 +20,3 @@ I2C addresses expected by the firmware:
 - SHT30: `0x44`
 - ENS160: `0x53`
 - SSD1306: `0x3C`
-

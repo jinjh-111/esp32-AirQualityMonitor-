@@ -11,7 +11,8 @@ An open, reproducible desktop monitor built with an ESP32-C3. It reads SHT30
 temperature/humidity and ENS160 air-quality data, provides OLED and RGB
 feedback, and serves a local dashboard with a 24-hour in-memory trend.
 
-See the [architecture diagram](docs/architecture.md).
+See the [architecture diagram](docs/architecture.md),
+[assembly guide](docs/assembly.md), and [schematic](docs/schematic.svg).
 
 ## Features / 功能
 
@@ -38,7 +39,8 @@ See the [architecture diagram](docs/architecture.md).
 | 330 ohm resistor, 100 uF capacitor | 1 each | Data and power protection |
 | Breadboard, jumper wires, USB-C cable | 1 set | Prototype assembly |
 
-See [wiring.md](docs/wiring.md) for the pin map and voltage notes.
+See [wiring.md](docs/wiring.md) for the pin map and voltage notes, then follow
+the Chinese [assembly guide](docs/assembly.md) and [schematic](docs/schematic.svg).
 
 ## Build and flash / 编译烧录
 

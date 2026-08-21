@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820">
+  <style>
+    text{font-family:Arial,sans-serif;fill:#172033}.title{font-size:30px;font-weight:700}.subtitle{font-size:16px;fill:#566074}.box{fill:#f8fafc;stroke:#263244;stroke-width:2}.module{font-size:20px;font-weight:700}.pin{font-size:15px}.rail-label{font-size:16px;font-weight:700}.vcc{stroke:#dc2626;fill:none;stroke-width:4}.gnd{stroke:#313846;fill:none;stroke-width:4}.sda{stroke:#2563eb;fill:none;stroke-width:4}.scl{stroke:#16a34a;fill:none;stroke-width:4}.rgb{stroke:#9333ea;fill:none;stroke-width:4}.note{font-size:15px;fill:#3f4858}
+  </style>
+  <text x="640" y="42" text-anchor="middle" class="title">ESP32-C3 Desktop Air Monitor Wiring Schematic</text>
+  <text x="640" y="70" text-anchor="middle" class="subtitle">Disconnect USB power before changing any wire</text>
+
+  <rect x="465" y="105" width="350" height="185" rx="8" class="box"/>
+  <text x="640" y="140" text-anchor="middle" class="module">ESP32-C3-DevKitM-1</text>
+  <text x="495" y="180" class="pin">3V3</text><text x="495" y="215" class="pin">GND</text>
+  <text x="675" y="180" class="pin">GPIO4 / SDA</text><text x="675" y="215" class="pin">GPIO5 / SCL</text>
+  <text x="675" y="250" class="pin">GPIO8 / RGB DATA</text>
+
+  <path d="M120 350H1160" class="vcc"/><path d="M120 405H1160" class="sda"/>
+  <path d="M120 460H1160" class="scl"/><path d="M120 685H1160" class="gnd"/>
+  <text x="35" y="356" class="rail-label">3V3</text><text x="35" y="411" class="rail-label">SDA</text>
+  <text x="35" y="466" class="rail-label">SCL</text><text x="35" y="691" class="rail-label">GND</text>
+
+  <path d="M465 175H420V350" class="vcc"/><path d="M465 210H390V685" class="gnd"/>
+  <path d="M815 175H850V405" class="sda"/><path d="M815 210H880V460" class="scl"/>
+  <path d="M815 245H1040V478" class="rgb"/>
+
+  <rect x="95" y="520" width="245" height="125" rx="8" class="box"/>
+  <text x="218" y="552" text-anchor="middle" class="module">SHT30</text>
+  <text x="115" y="585" class="pin">VCC   GND   SDA   SCL</text><text x="218" y="618" text-anchor="middle" class="pin">I2C address 0x44</text>
+  <path d="M130 520V350" class="vcc"/><path d="M180 520V685" class="gnd"/>
+  <path d="M240 520V405" class="sda"/><path d="M300 520V460" class="scl"/>
+
+  <rect x="380" y="520" width="245" height="125" rx="8" class="box"/>
+  <text x="503" y="552" text-anchor="middle" class="module">ENS160</text>
+  <text x="400" y="585" class="pin">VCC   GND   SDA   SCL</text><text x="503" y="618" text-anchor="middle" class="pin">I2C address 0x53</text>
+  <path d="M415 520V350" class="vcc"/><path d="M465 520V685" class="gnd"/>
+  <path d="M525 520V405" class="sda"/><path d="M585 520V460" class="scl"/>
+
+  <rect x="665" y="520" width="245" height="125" rx="8" class="box"/>
+  <text x="788" y="552" text-anchor="middle" class="module">SSD1306 OLED</text>
+  <text x="685" y="585" class="pin">VCC   GND   SDA   SCL</text><text x="788" y="618" text-anchor="middle" class="pin">I2C address 0x3C</text>
+  <path d="M700 520V350" class="vcc"/><path d="M750 520V685" class="gnd"/>
+  <path d="M810 520V405" class="sda"/><path d="M870 520V460" class="scl"/>
+
+  <rect x="965" y="520" width="220" height="125" rx="8" class="box"/>
+  <text x="1075" y="552" text-anchor="middle" class="module">WS2812B module</text>
+  <text x="990" y="585" class="pin">VCC</text><text x="1050" y="585" class="pin">DIN</text><text x="1120" y="585" class="pin">GND</text>
+  <path d="M995 520V350" class="vcc"/><path d="M1140 520V685" class="gnd"/>
+  <rect x="1005" y="478" width="85" height="28" rx="5" class="box"/>
+  <text x="1048" y="498" text-anchor="middle" class="pin">330 ohm</text><path d="M1040 520V506" class="rgb"/>
+
+  <line x1="925" y1="570" x2="955" y2="570" class="vcc"/><line x1="925" y1="605" x2="955" y2="605" class="gnd"/>
+  <path d="M925 570V350" class="vcc"/><path d="M925 605V685" class="gnd"/>
+  <text x="820" y="576" class="pin">100 uF (+)</text><text x="820" y="611" class="pin">100 uF (-)</text>
+
+  <text x="75" y="750" class="note">WS2812: connect VCC to 3V3 only when the module supports it. Otherwise use USB 5V/VBUS with common GND.</text>
+  <text x="75" y="778" class="note">Never connect USB 5V to the ESP32 3V3 rail. Add a 74AHCT125/74HCT14 level shifter if 5V RGB data is unstable.</text>
+</svg>
