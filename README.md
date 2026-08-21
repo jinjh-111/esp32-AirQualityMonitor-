@@ -12,7 +12,8 @@ temperature/humidity and ENS160 air-quality data, provides OLED and RGB
 feedback, and serves a local dashboard with a 24-hour in-memory trend.
 
 See the [architecture diagram](docs/architecture.md),
-[assembly guide](docs/assembly.md), and [schematic](docs/schematic.svg).
+[assembly guide](docs/assembly.md), [hole-by-hole breadboard layout](docs/breadboard-layout.md),
+and [schematic](docs/schematic.svg).
 
 ## Features / 功能
 

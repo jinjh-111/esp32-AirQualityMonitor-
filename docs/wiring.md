@@ -1,7 +1,8 @@
 # Wiring / 接线
 
 完整的分阶段组装、上电检查和手机配网步骤见
-[`assembly.md`](assembly.md)。原理图见 [`schematic.svg`](schematic.svg)。
+[`assembly.md`](assembly.md)。逐孔面包板布局见
+[`breadboard-layout.md`](breadboard-layout.md)，原理图见 [`schematic.svg`](schematic.svg)。
 
 | ESP32-C3 | SHT30 | ENS160 | SSD1306 | WS2812 |
 | --- | --- | --- | --- | --- |
