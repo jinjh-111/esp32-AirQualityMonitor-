@@ -14,9 +14,9 @@ constexpr uint8_t kOledAddress = 0x3C;
 constexpr uint8_t kOledWidth = 128;
 constexpr uint8_t kOledHeight = 64;
 
-constexpr uint32_t kSensorIntervalMs = 2'000;
-constexpr uint32_t kDisplayIntervalMs = 3'000;
-constexpr uint32_t kHistoryIntervalMs = 5 * 60 * 1'000;
+constexpr uint32_t kSensorIntervalMs = 2000;
+constexpr uint32_t kDisplayIntervalMs = 3000;
+constexpr uint32_t kHistoryIntervalMs = 5 * 60 * 1000;
 constexpr size_t kHistoryCapacity = 24 * 60 / 5;
 
 constexpr char kAccessPointName[] = "ESP32-AirMonitor";
@@ -24,4 +24,3 @@ constexpr char kMdnsHostName[] = "air-monitor";
 constexpr uint16_t kConfigPortalTimeoutSeconds = 180;
 
 }  // namespace config
-

@@ -1,7 +1,7 @@
+#include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 #include <Adafruit_SHT31.h>
 #include <Adafruit_SSD1306.h>
-#include <Arduino.h>
 #include <ArduinoJson.h>
 #include <ESPmDNS.h>
 #include <LittleFS.h>
@@ -134,7 +134,7 @@ void initializeHardware() {
     Serial.println("OLED not detected");
   }
 
-  sht30Detected = sht30.begin(config::kSht30Address, &Wire);
+  sht30Detected = sht30.begin(config::kSht30Address);
   deviceState.sht30Health =
       sht30Detected ? SensorHealth::kError : SensorHealth::kMissing;
   Serial.printf("SHT30: %s\n", sht30Detected ? "detected" : "missing");
@@ -436,14 +436,14 @@ void serviceNetwork() {
       startWebServer();
     } else if (deadlineReached(now, nextWifiReconnectAtMs)) {
       WiFi.reconnect();
-      nextWifiReconnectAtMs = now + 30'000;
+      nextWifiReconnectAtMs = now + 30000;
     }
   } else {
     webServer.handleClient();
     if (WiFi.status() != WL_CONNECTED &&
         deadlineReached(now, nextWifiReconnectAtMs)) {
       WiFi.reconnect();
-      nextWifiReconnectAtMs = now + 30'000;
+      nextWifiReconnectAtMs = now + 30000;
     }
   }
 }
@@ -465,7 +465,7 @@ void setup() {
   nextSensorAtMs = now;
   nextDisplayAtMs = now;
   nextHistoryAtMs = now + config::kHistoryIntervalMs;
-  nextWifiReconnectAtMs = now + 30'000;
+  nextWifiReconnectAtMs = now + 30000;
 }
 
 void loop() {
