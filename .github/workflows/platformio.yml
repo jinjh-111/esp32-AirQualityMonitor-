@@ -1,0 +1,16 @@
+name: PlatformIO
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: n-vr/setup-platformio-action@v1
+      - name: Build firmware
+        run: pio run -e esp32-c3
+      - name: Run native tests
+        run: pio test -e native
